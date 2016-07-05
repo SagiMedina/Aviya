@@ -1,0 +1,33 @@
+{
+  "name": "avia",
+  "version": "1.0.0",
+  "description": "Components and JSX like for simple projects",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SagiMedina/Aviya.git"
+  },
+  "keywords": [
+    "EcmaScript"
+    "JavaScript"
+    "Vanilla"
+    "Components"
+    "JSX"
+  ],
+  "author": "SagiMedina",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "maintainers": [
+  {
+    "name": "sagimedina",
+    "email": "sagimedina@googlemail.com"
+  }
+],
+  "bugs": {
+    "url": "https://github.com/SagiMedina/Aviya/issues"
+  },
+  "homepage": "https://github.com/SagiMedina/Aviya#readme"
+}
