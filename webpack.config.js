@@ -1,11 +1,15 @@
 var path = require('path');
 var webpack = require('webpack');
+var libraryName = 'Aviya';
 
 module.exports = {
     entry: path.resolve(__dirname, 'src/Aviya'),
     output: {
-        path: __dirname,
-        filename: 'Aviya.js'
+        path: path.join(__dirname, 'build'),
+        filename: 'Aviya.js',
+        library: libraryName,
+        libraryTarget: 'umd',
+        umdNamedDefine: true
     },
     module: {
         loaders: [

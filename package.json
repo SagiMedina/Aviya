@@ -7,10 +7,10 @@
     "url": "git+https://github.com/SagiMedina/Aviya.git"
   },
   "keywords": [
-    "EcmaScript"
-    "JavaScript"
-    "Vanilla"
-    "Components"
+    "EcmaScript",
+    "JavaScript",
+    "Vanilla",
+    "Components",
     "JSX"
   ],
   "author": "SagiMedina",
@@ -21,13 +21,22 @@
     }
   ],
   "maintainers": [
-  {
-    "name": "sagimedina",
-    "email": "sagimedina@googlemail.com"
-  }
-],
+    {
+      "name": "sagimedina",
+      "email": "sagimedina@googlemail.com"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/SagiMedina/Aviya/issues"
   },
-  "homepage": "https://github.com/SagiMedina/Aviya#readme"
+  "homepage": "https://github.com/SagiMedina/Aviya#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "html-loader": "^0.4.3",
+    "webpack": "^1.13.1"
+  }
 }
