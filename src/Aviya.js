@@ -38,7 +38,14 @@ export default class Aviya {
             }
         }
         for (let dependency of this._dependencies){
-            dependency.render();
+            if (typeof dependency === 'function'){
+                let dumbComponent = new Aviya();
+                dumbComponent.html = function () {
+                    return dependency();
+                };
+                dumbComponent.render(dependency.name)
+            }
+            else dependency.render();
         }
     }
 }
