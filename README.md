@@ -8,14 +8,6 @@ But you also probably think it is overkill for some of your more **simpler proje
 
 **Aviya** a simple Class for you to extend that will give you the options to write your app using **declarative views**, **encapsulated components** and even, if you liked it, **JSX** style.
 
-
-----------
-
-
-----------
-[TOC]
-
-
 ----------
 
 
@@ -313,9 +305,12 @@ export default new Hello();
 Aviya is constantly under development.
 You are all welcome to join us!
 
-> ~~Code Examples~~
- ~~Dump Components~~
- More Tests
+~~Code Examples~~
+
+~~Dump Components~~
+
+More Tests
+
 Comparison With Alternative Packeges
 
 
