@@ -1,6 +1,5 @@
 export default class Aviya {
     constructor(){
-        this.render = this.render.bind(this);
         this.htmlFile = null;
         this._htmlString = null;
         this._dependencies = [];
@@ -21,12 +20,15 @@ export default class Aviya {
         return this.htmlFile.match(re).map(htmlMatch => htmlMatch.replace(/(\\r\\n|\\n|\\r|\\")/gm,'')).join('')
     }
 
-    render(element=this.constructor.name){
+    _renderHtmlToDOMElement(element){
         this._htmlString = this.htmlFile ? this._htmlFileRender() : this.html();
         for (let selectedElement of document.querySelectorAll(element)){
             selectedElement.insertAdjacentHTML('afterend', this._htmlString);
             selectedElement.remove()
         }
+    }
+
+    _bindEventsToComponent(){
         for (let event of this._events){
             for (let registerEvent of document.querySelectorAll(event.selector)){
                 if (!registerEvent.getAttribute('event_id')){
@@ -37,6 +39,9 @@ export default class Aviya {
                 }
             }
         }
+    }
+
+    _injectHtmlFromDependencyToComponent(){
         for (let dependency of this._dependencies){
             if (typeof dependency === 'function'){
                 let dumbComponent = new Aviya();
@@ -47,5 +52,11 @@ export default class Aviya {
             }
             else dependency.render();
         }
+    }
+
+    render(element=this.constructor.name){
+        this._renderHtmlToDOMElement(element);
+        this._bindEventsToComponent();
+        this._injectHtmlFromDependencyToComponent();
     }
 }

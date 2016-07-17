@@ -123,27 +123,27 @@
 	  "object" == ( false ? "undefined" : _typeof(exports)) && "object" == ( false ? "undefined" : _typeof(module)) ? module.exports = t() :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (t), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : "object" == (typeof exports === "undefined" ? "undefined" : _typeof(exports)) ? exports.Aviya = t() : e.Aviya = t();
 	}(undefined, function () {
 	  return function (e) {
-	    function t(n) {
-	      if (r[n]) return r[n].exports;var i = r[n] = { exports: {}, id: n, loaded: !1 };return e[n].call(i.exports, i, i.exports, t), i.loaded = !0, i.exports;
-	    }var r = {};return t.m = e, t.c = r, t.p = "", t(0);
+	    function t(r) {
+	      if (n[r]) return n[r].exports;var o = n[r] = { exports: {}, id: r, loaded: !1 };return e[r].call(o.exports, o, o.exports, t), o.loaded = !0, o.exports;
+	    }var n = {};return t.m = e, t.c = n, t.p = "", t(0);
 	  }([function (e, t) {
 	    "use strict";
-	    function r(e, t) {
+	    function n(e, t) {
 	      if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
-	    }Object.defineProperty(t, "__esModule", { value: !0 });var n = function () {
+	    }Object.defineProperty(t, "__esModule", { value: !0 });var r = function () {
 	      function e(e, t) {
-	        for (var r = 0; r < t.length; r++) {
-	          var n = t[r];n.enumerable = n.enumerable || !1, n.configurable = !0, "value" in n && (n.writable = !0), Object.defineProperty(e, n.key, n);
+	        for (var n = 0; n < t.length; n++) {
+	          var r = t[n];r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
 	        }
-	      }return function (t, r, n) {
-	        return r && e(t.prototype, r), n && e(t, n), t;
+	      }return function (t, n, r) {
+	        return n && e(t.prototype, n), r && e(t, r), t;
 	      };
 	    }(),
-	        i = function () {
+	        o = function () {
 	      function e() {
-	        r(this, e), this.render = this.render.bind(this), this.htmlFile = null, this._htmlString = null, this._dependencies = [], this._events = [];
-	      }return n(e, [{ key: "addEventListener", value: function value(e, t, r) {
-	          this._events.push({ selector: e, type: t, trigger: r });
+	        n(this, e), this.htmlFile = null, this._htmlString = null, this._dependencies = [], this._events = [];
+	      }return r(e, [{ key: "addEventListener", value: function value(e, t, n) {
+	          this._events.push({ selector: e, type: t, trigger: n });
 	        } }, { key: "addDependency", value: function value(e) {
 	          this._dependencies.push(e);
 	        } }, { key: "_htmlFileRender", value: function value() {
@@ -151,75 +151,81 @@
 	              t = new RegExp(e, "gi");return this.htmlFile.match(t).map(function (e) {
 	            return e.replace(/(\\r\\n|\\n|\\r|\\")/gm, "");
 	          }).join("");
-	        } }, { key: "render", value: function value() {
-	          var t = arguments.length <= 0 || void 0 === arguments[0] ? this.constructor.name : arguments[0];this._htmlString = this.htmlFile ? this._htmlFileRender() : this.html();var r = !0,
+	        } }, { key: "_renderHtmlToDOMElement", value: function value(e) {
+	          this._htmlString = this.htmlFile ? this._htmlFileRender() : this.html();var t = !0,
 	              n = !1,
-	              i = void 0;try {
-	            for (var o, a = document.querySelectorAll(t)[Symbol.iterator](); !(r = (o = a.next()).done); r = !0) {
+	              r = void 0;try {
+	            for (var o, i = document.querySelectorAll(e)[Symbol.iterator](); !(t = (o = i.next()).done); t = !0) {
 	              var l = o.value;l.insertAdjacentHTML("afterend", this._htmlString), l.remove();
 	            }
-	          } catch (u) {
-	            n = !0, i = u;
+	          } catch (a) {
+	            n = !0, r = a;
 	          } finally {
 	            try {
-	              !r && a["return"] && a["return"]();
+	              !t && i["return"] && i["return"]();
 	            } finally {
-	              if (n) throw i;
+	              if (n) throw r;
 	            }
-	          }var c = !0,
-	              s = !1,
-	              f = void 0;try {
-	            for (var d, h = this._events[Symbol.iterator](); !(c = (d = h.next()).done); c = !0) {
-	              var v = d.value,
-	                  y = !0,
-	                  m = !1,
-	                  p = void 0;try {
-	                for (var _, b = document.querySelectorAll(v.selector)[Symbol.iterator](); !(y = (_ = b.next()).done); y = !0) {
-	                  var g = _.value;if (!g.getAttribute("event_id")) {
-	                    var x = Math.random().toString(36).substr(2, 9);g.setAttribute("event_id", this.constructor.name + "_event_" + x), document.querySelector("[event_id=" + this.constructor.name + "_event_" + x + "]").addEventListener(v.type, v.trigger);
+	          }
+	        } }, { key: "_bindEventsToComponent", value: function value() {
+	          var e = !0,
+	              t = !1,
+	              n = void 0;try {
+	            for (var r, o = this._events[Symbol.iterator](); !(e = (r = o.next()).done); e = !0) {
+	              var i = r.value,
+	                  l = !0,
+	                  a = !1,
+	                  u = void 0;try {
+	                for (var c, s = document.querySelectorAll(i.selector)[Symbol.iterator](); !(l = (c = s.next()).done); l = !0) {
+	                  var f = c.value;if (!f.getAttribute("event_id")) {
+	                    var d = Math.random().toString(36).substr(2, 9);f.setAttribute("event_id", this.constructor.name + "_event_" + d), document.querySelector("[event_id=" + this.constructor.name + "_event_" + d + "]").addEventListener(i.type, i.trigger);
 	                  }
 	                }
-	              } catch (u) {
-	                m = !0, p = u;
+	              } catch (v) {
+	                a = !0, u = v;
 	              } finally {
 	                try {
-	                  !y && b["return"] && b["return"]();
+	                  !l && s["return"] && s["return"]();
 	                } finally {
-	                  if (m) throw p;
+	                  if (a) throw u;
 	                }
 	              }
 	            }
-	          } catch (u) {
-	            s = !0, f = u;
+	          } catch (v) {
+	            t = !0, n = v;
 	          } finally {
 	            try {
-	              !c && h["return"] && h["return"]();
+	              !e && o["return"] && o["return"]();
 	            } finally {
-	              if (s) throw f;
-	            }
-	          }var S = !0,
-	              w = !1,
-	              A = void 0;try {
-	            for (var j, k = function k() {
-	              var t = j.value;if ("function" == typeof t) {
-	                var r = new e();r.html = function () {
-	                  return t();
-	                }, r.render(t.name);
-	              } else t.render();
-	            }, F = this._dependencies[Symbol.iterator](); !(S = (j = F.next()).done); S = !0) {
-	              k();
-	            }
-	          } catch (u) {
-	            w = !0, A = u;
-	          } finally {
-	            try {
-	              !S && F["return"] && F["return"]();
-	            } finally {
-	              if (w) throw A;
+	              if (t) throw n;
 	            }
 	          }
+	        } }, { key: "_injectHtmlFromDependencyToComponent", value: function value() {
+	          var t = !0,
+	              n = !1,
+	              r = void 0;try {
+	            for (var o, i = function i() {
+	              var t = o.value;if ("function" == typeof t) {
+	                var n = new e();n.html = function () {
+	                  return t();
+	                }, n.render(t.name);
+	              } else t.render();
+	            }, l = this._dependencies[Symbol.iterator](); !(t = (o = l.next()).done); t = !0) {
+	              i();
+	            }
+	          } catch (a) {
+	            n = !0, r = a;
+	          } finally {
+	            try {
+	              !t && l["return"] && l["return"]();
+	            } finally {
+	              if (n) throw r;
+	            }
+	          }
+	        } }, { key: "render", value: function value() {
+	          var e = arguments.length <= 0 || void 0 === arguments[0] ? this.constructor.name : arguments[0];this._renderHtmlToDOMElement(e), this._bindEventsToComponent(), this._injectHtmlFromDependencyToComponent();
 	        } }]), e;
-	    }();t["default"] = i;
+	    }();t["default"] = o;
 	  }]);
 	});
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)(module)))
