@@ -41,7 +41,7 @@ export default class Aviya {
         }
     }
 
-    _injectHtmlFromDependencyToComponent(){
+    _renderComponentsDependencies(){
         for (let dependency of this._dependencies){
             if (typeof dependency === 'function'){
                 let dumbComponent = new Aviya();
@@ -57,6 +57,6 @@ export default class Aviya {
     render(element=this.constructor.name){
         this._renderHtmlToDOMElement(element);
         this._bindEventsToComponent();
-        this._injectHtmlFromDependencyToComponent();
+        this._renderComponentsDependencies();
     }
 }

@@ -124,7 +124,7 @@
 	}(undefined, function () {
 	  return function (e) {
 	    function t(r) {
-	      if (n[r]) return n[r].exports;var o = n[r] = { exports: {}, id: r, loaded: !1 };return e[r].call(o.exports, o, o.exports, t), o.loaded = !0, o.exports;
+	      if (n[r]) return n[r].exports;var i = n[r] = { exports: {}, id: r, loaded: !1 };return e[r].call(i.exports, i, i.exports, t), i.loaded = !0, i.exports;
 	    }var n = {};return t.m = e, t.c = n, t.p = "", t(0);
 	  }([function (e, t) {
 	    "use strict";
@@ -139,7 +139,7 @@
 	        return n && e(t.prototype, n), r && e(t, r), t;
 	      };
 	    }(),
-	        o = function () {
+	        i = function () {
 	      function e() {
 	        n(this, e), this.htmlFile = null, this._htmlString = null, this._dependencies = [], this._events = [];
 	      }return r(e, [{ key: "addEventListener", value: function value(e, t, n) {
@@ -155,14 +155,14 @@
 	          this._htmlString = this.htmlFile ? this._htmlFileRender() : this.html();var t = !0,
 	              n = !1,
 	              r = void 0;try {
-	            for (var o, i = document.querySelectorAll(e)[Symbol.iterator](); !(t = (o = i.next()).done); t = !0) {
-	              var l = o.value;l.insertAdjacentHTML("afterend", this._htmlString), l.remove();
+	            for (var i, o = document.querySelectorAll(e)[Symbol.iterator](); !(t = (i = o.next()).done); t = !0) {
+	              var a = i.value;a.insertAdjacentHTML("afterend", this._htmlString), a.remove();
 	            }
-	          } catch (a) {
-	            n = !0, r = a;
+	          } catch (l) {
+	            n = !0, r = l;
 	          } finally {
 	            try {
-	              !t && i["return"] && i["return"]();
+	              !t && o["return"] && o["return"]();
 	            } finally {
 	              if (n) throw r;
 	            }
@@ -171,23 +171,23 @@
 	          var e = !0,
 	              t = !1,
 	              n = void 0;try {
-	            for (var r, o = this._events[Symbol.iterator](); !(e = (r = o.next()).done); e = !0) {
-	              var i = r.value,
-	                  l = !0,
-	                  a = !1,
+	            for (var r, i = this._events[Symbol.iterator](); !(e = (r = i.next()).done); e = !0) {
+	              var o = r.value,
+	                  a = !0,
+	                  l = !1,
 	                  u = void 0;try {
-	                for (var c, s = document.querySelectorAll(i.selector)[Symbol.iterator](); !(l = (c = s.next()).done); l = !0) {
-	                  var f = c.value;if (!f.getAttribute("event_id")) {
-	                    var d = Math.random().toString(36).substr(2, 9);f.setAttribute("event_id", this.constructor.name + "_event_" + d), document.querySelector("[event_id=" + this.constructor.name + "_event_" + d + "]").addEventListener(i.type, i.trigger);
+	                for (var c, s = document.querySelectorAll(o.selector)[Symbol.iterator](); !(a = (c = s.next()).done); a = !0) {
+	                  var d = c.value;if (!d.getAttribute("event_id")) {
+	                    var f = Math.random().toString(36).substr(2, 9);d.setAttribute("event_id", this.constructor.name + "_event_" + f), document.querySelector("[event_id=" + this.constructor.name + "_event_" + f + "]").addEventListener(o.type, o.trigger);
 	                  }
 	                }
 	              } catch (v) {
-	                a = !0, u = v;
+	                l = !0, u = v;
 	              } finally {
 	                try {
-	                  !l && s["return"] && s["return"]();
+	                  !a && s["return"] && s["return"]();
 	                } finally {
-	                  if (a) throw u;
+	                  if (l) throw u;
 	                }
 	              }
 	            }
@@ -195,37 +195,37 @@
 	            t = !0, n = v;
 	          } finally {
 	            try {
-	              !e && o["return"] && o["return"]();
+	              !e && i["return"] && i["return"]();
 	            } finally {
 	              if (t) throw n;
 	            }
 	          }
-	        } }, { key: "_injectHtmlFromDependencyToComponent", value: function value() {
+	        } }, { key: "_renderComponentsDependencies", value: function value() {
 	          var t = !0,
 	              n = !1,
 	              r = void 0;try {
-	            for (var o, i = function i() {
-	              var t = o.value;if ("function" == typeof t) {
+	            for (var i, o = function o() {
+	              var t = i.value;if ("function" == typeof t) {
 	                var n = new e();n.html = function () {
 	                  return t();
 	                }, n.render(t.name);
 	              } else t.render();
-	            }, l = this._dependencies[Symbol.iterator](); !(t = (o = l.next()).done); t = !0) {
-	              i();
+	            }, a = this._dependencies[Symbol.iterator](); !(t = (i = a.next()).done); t = !0) {
+	              o();
 	            }
-	          } catch (a) {
-	            n = !0, r = a;
+	          } catch (l) {
+	            n = !0, r = l;
 	          } finally {
 	            try {
-	              !t && l["return"] && l["return"]();
+	              !t && a["return"] && a["return"]();
 	            } finally {
 	              if (n) throw r;
 	            }
 	          }
 	        } }, { key: "render", value: function value() {
-	          var e = arguments.length <= 0 || void 0 === arguments[0] ? this.constructor.name : arguments[0];this._renderHtmlToDOMElement(e), this._bindEventsToComponent(), this._injectHtmlFromDependencyToComponent();
+	          var e = arguments.length <= 0 || void 0 === arguments[0] ? this.constructor.name : arguments[0];this._renderHtmlToDOMElement(e), this._bindEventsToComponent(), this._renderComponentsDependencies();
 	        } }]), e;
-	    }();t["default"] = o;
+	    }();t["default"] = i;
 	  }]);
 	});
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)(module)))
