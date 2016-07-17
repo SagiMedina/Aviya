@@ -20,7 +20,7 @@ export default class Aviya {
         return this.htmlFile.match(re).map(htmlMatch => htmlMatch.replace(/(\\r\\n|\\n|\\r|\\")/gm,'')).join('')
     }
 
-    _renderHtmlToDOMElement(element){
+    _injectHtmlToDOMElement(element){
         this._htmlString = this.htmlFile ? this._htmlFileRender() : this.html();
         for (let selectedElement of document.querySelectorAll(element)){
             selectedElement.insertAdjacentHTML('afterend', this._htmlString);
@@ -55,7 +55,7 @@ export default class Aviya {
     }
 
     render(element=this.constructor.name){
-        this._renderHtmlToDOMElement(element);
+        this._injectHtmlToDOMElement(element);
         this._bindEventsToComponent();
         this._renderComponentsDependencies();
     }
