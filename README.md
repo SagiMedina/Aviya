@@ -54,10 +54,6 @@ import Hello from './Hello';
 Hello.render('#app');
 ```
 
-
-----------
-
-
 Hello Component:
 
 ``` javascript
